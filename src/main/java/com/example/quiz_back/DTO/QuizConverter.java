@@ -15,17 +15,20 @@ public class QuizConverter {
         quizDTO.setQuizName(quiz.getQuizName());
         quizDTO.setQuizDesc(quiz.getQuizDesc());
         quizDTO.setCreatorId(quiz.getCreatorId());
+        quizDTO.setAmount(quiz.getQuestions().size());
 
         List<QuestionDTO> questionDTOs = new ArrayList<>();
         for (Question question : quiz.getQuestions()) {
             QuestionDTO questionDTO = new QuestionDTO();
 
             questionDTO.setText(question.getText());
+            questionDTO.setId(question.getId());
 
             List<AnswerDTO> answerDTOs = new ArrayList<>();
             for (Answer answer : question.getAnswers()) {
                 AnswerDTO answerDTO = new AnswerDTO();
 
+                answerDTO.setId(answer.getId());
                 answerDTO.setText(answer.getText());
                 answerDTO.setCorrect(answer.isCorrect());
                 answerDTOs.add(answerDTO);

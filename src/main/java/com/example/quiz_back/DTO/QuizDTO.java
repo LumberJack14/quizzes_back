@@ -1,5 +1,7 @@
 package com.example.quiz_back.DTO;
 
+import com.example.quiz_back.entity.Quiz;
+
 import java.util.List;
 
 public class QuizDTO {
@@ -8,6 +10,15 @@ public class QuizDTO {
     private String quizName;
     private String quizDesc;
     private List<QuestionDTO> questions;
+    private Integer amount;
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
 
     public Integer getId() {
         return id;
